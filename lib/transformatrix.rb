@@ -1,19 +1,21 @@
-require "transformatrix/version"
+require_relative "transformatrix/version"
+require 'matrix'
 
 class TMatrix
 	include Math
 
-	:attr matrix
+	attr :matrix
+
+	def initialize
+		self
+	end
 
 	def rotation angle
-		matrix = Matrix.new [ \
-			[cos(angle),	sin(angle),	0], \
-			[-sin(angle),	cos(angle),	0], \
-			[0,				0,			1]]
+		base = []
+		@matrix = Matrix[[cos(angle), sin(angle), 0], [-sin(angle), cos(angle), 0], [0, 0, 1]]
+
 	end
 
-	def translation x, y
+	def tranlation x, y
 	end
-
-
 end
