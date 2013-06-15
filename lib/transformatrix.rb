@@ -14,7 +14,8 @@ class TMatrix < Matrix
 		end
 	end
 
-	def multiply_array array
+	def multiply_array arg
+		array = arg.dup
 		return_size = array.size
 
 		if array.size == 2
